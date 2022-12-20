@@ -150,6 +150,20 @@ body {
     height: 72px;
     background: #EFEFEF;
     border-radius: 8.41654px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-img {
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.slide {
+    background-color: #DEDEDE;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -165,12 +179,65 @@ body {
 
 }
 
-.block {
-    height: 100px;
-    color: #EFEFEF;
-    max-width: 423px;
-    margin-right: 20px;
+.carousel-container {
+    margin-right: 40px;
+    height: 400px;
+    overflow: hidden;
 }
+
+#carousel {
+    display: flex;
+}
+
+.slide {
+    display: none;
+    background: #EFEFEF;
+    border-radius: 38.9041px;
+    padding: 60px 20px;
+    width: 100%;
+    min-height: 200px;
+    width: 100%;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: darkslategrey;
+    margin-bottom: 20px;
+}
+
+
+.testimonial-heading {
+    margin-bottom: 50px;
+}
+
+.testimonial-parah {}
+
+.nav-button {
+    margin: 0 20px;
+    border-radius: 100%;
+    padding: 10px 12px;
+    border: none;
+    font-weight: 600;
+}
+
+.nav-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 
 /* normal styles */
 .flexrow {
@@ -250,6 +317,11 @@ body {
     .grid5 {
         grid-template-columns: 1fr 1fr;
         row-gap: 20px;
+    }
+
+    .carousel-container {
+        margin-right: 0px;
+        margin-bottom: 40px;
     }
 }
 
