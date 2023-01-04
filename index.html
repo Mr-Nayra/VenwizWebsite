@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link href="favicon.png" rel="icon" />
+
+    <title>Venwiz</title>
   </head>
   <body>
+    <!-- header -->
     <header class="header">
       <nav class="navbar">
-        <img
-          src="/public/Ven-Logo-Dark-Colour 1.svg"
-          alt="Ven-Logo-Dark-Colour"
-        />
+        <a href="https://www.venwiz.com/">
+          <img src="Ven-Logo-Dark-Colour 1.svg" alt="Ven-Logo-Dark-Colour" />
+        </a>
       </nav>
 
       <div class="flexrow">
-        <div class="flexrow header-content-container space-between">
+        <div class="flexrow space-between header-content-container">
           <div class="header-content">
             <h1 class="heading1-white">
-              The Go-To Platform For Industrial Services Procurement.
+              The Go-To Platform For CapEx & Industrial Services Procurement
             </h1>
             <p class="white-parah marginbottom20">
-              A single source of truth for discovery, procurement and execution
-              of
-              <span class="bold">CapEx</span> &
-              <span class="bold">MRO</span> projects.
+              Venwiz is a one-stop-shop for all
+              <span class="bold">CapEx</span> requirements- discovery,
+              procurement & job execution.
             </p>
             <ul>
               <li class="white-parah list">
@@ -42,56 +45,147 @@
           </div>
           <div class="form-container">
             <div class="form-back"></div>
-            <form class="form">
+            <form
+              class="form"
+              id="hsform"
+              action="https://forms.hubspot.com/uploads/form/v2/23529970/d4c57db6-b880-48e1-9974-f44791531218"
+              method="post"
+            >
               <div class="inputcont">
-                <input type="text" class="input" placeholder="Full Name" />
-                <input type="text" class="input" placeholder="Work Email" />
-                <input type="text" class="input" placeholder="Company Name" />
-                <input type="text" class="input" placeholder="Mobile No." />
+                <input
+                  type="text"
+                  name="first_name"
+                  class="input"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  name="last_name"
+                  class="input"
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  class="input"
+                  placeholder="Work Email"
+                  required
+                />
+                <input
+                  type="text"
+                  name="company"
+                  class="input"
+                  placeholder="Company Name"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="mobilephone"
+                  class="input"
+                  placeholder="Mobile No."
+                  required
+                />
               </div>
               <div class="flexrowend">
-                <button class="button">Submit</button>
+                <input type="submit" class="button" value="Submit" />
               </div>
             </form>
+            <script>
+              $("#hsform").submit(function (e) {
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+                var form = $(this);
+                var url = form.attr("action");
+                $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: form.serialize(), // serializes the form's elements.
+                  success: function (data) {
+                    window.location.href =
+                      "https://www.venwiz.com/vendor-list/?subcategory=Listing&q=cable%20laying";
+                  },
+                  error: function (data) {
+                    alert("Something went wrong, Please try again later.");
+                  },
+                });
+              });
+            </script>
           </div>
         </div>
       </div>
     </header>
+    <!-- Brands-container -->
     <div class="Brands-container">
       <h1 class="heading-blue">Brands That Trust Venwiz</h1>
       <div class="grid5 brand-container">
         <div class="brand">
           <img
             class="brand-img"
-            src="/public/Ven-Logo-Dark-Colour 1.svg"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-1.png"
             alt="Ven-Logo-Dark-Colour"
           />
         </div>
         <div class="brand">
           <img
             class="brand-img"
-            src="/public/Ven-Logo-Dark-Colour 1.svg"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-2.png"
             alt="Ven-Logo-Dark-Colour"
           />
         </div>
         <div class="brand">
           <img
             class="brand-img"
-            src="/public/Ven-Logo-Dark-Colour 1.svg"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-13.png"
             alt="Ven-Logo-Dark-Colour"
           />
         </div>
         <div class="brand">
           <img
             class="brand-img"
-            src="/public/Ven-Logo-Dark-Colour 1.svg"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-4.png"
             alt="Ven-Logo-Dark-Colour"
           />
         </div>
         <div class="brand">
           <img
             class="brand-img"
-            src="/public/Ven-Logo-Dark-Colour 1.svg"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-14.png"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-6.png"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-7.png"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-8.png"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-10.png"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/clients/client-11.png"
             alt="Ven-Logo-Dark-Colour"
           />
         </div>
@@ -99,52 +193,498 @@
     </div>
 
     <div class="carousel-div">
-      <div class="flexrow header-content-container space-between">
+      <div class="flexrow header-content-container space-between stretch">
         <div class="carousel-container">
           <div id="carousel">
             <div class="slide">
-              <!-- <img src="" alt="" /> -->
-              <div class="testimonial-image"></div>
-              <h1 class="testimonail-heading">Slide 1</h1>
+              <img
+                class="testimonial-image"
+                src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/testimonials/Manav.png"
+                alt="Venwiz-Madhav Bhutada"
+              />
+              <h3 class="testimonail-heading">MADHAV BHUTADA</h3>
+              <p class="testimonail-subheading">Promoter - Shilpa Medicare</p>
               <p class="testimonial-parah">
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem
-                Ipsum Lorem Ipsum Lorem Ipsum
+                "Scouting for new vendors even under normal circumstances is a
+                challenging task-we receive partial information, or in most
+                cases we end up discovering just a single vendor. This task gets
+                even more difficult for niche requirements. But after signing up
+                on Venwiz, things have become very easy for us. Now, we receive
+                multiple vendor suggestions, along with the detailed information
+                (general and technical). The information is readily accessible
+                on the platform in the form of vendor profile, which enables us
+                to shortlist the vendors more efficiently."
               </p>
             </div>
             <div class="slide">
-              <!-- <img src="" alt="" /> -->
-              <div class="testimonial-image"></div>
-              <h1 class="testimonail-heading">Slide 2</h1>
-              <p class="testimonial-parah">
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem
-                Ipsum Lorem Ipsum Lorem Ipsum
+              <img
+                src="https://www.venwiz.com/wp-content/themes/venwiz/assets/img/testimonials/unknown.png"
+                alt="Venwiz-Madhav Bhutada"
+                class="testimonial-image"
+              />
+              <h3 class="testimonail-heading">PV RAM KUMAR</h3>
+              <p class="testimonail-subheading">
+                General Manager Procurement - Thermopads Pvt Ltd, ThermoGroup
               </p>
-            </div>
-            <div class="slide">
-              <!-- <img src="" alt="" /> -->
-              <div class="testimonial-image"></div>
-              <h1 class="testimonail-heading">Slide 3</h1>
               <p class="testimonial-parah">
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                Lorem Ipsum Lorem Ipsum Lorem Ipsums
+                "Venwiz's "Discovery" module helped us create a pool of relevant
+                vendors for all our capex requirements (both greenfield and
+                regular projects) across multiple plant locations. On Venwiz, we
+                receive atleast two additional quotes for our each project
+                requirement. Venwiz also helped us scout for a vendor outside
+                India for a very niche requirement, thus helping us make
+                progress on a long-pending improvement project."
               </p>
             </div>
           </div>
-
           <!-- Prev/Next buttons -->
           <div class="nav-button-container">
             <button id="prev-button" class="nav-button"><</button>
             <button id="next-button" class="nav-button">></button>
           </div>
         </div>
-        <div class="header-content">
+        <div class="header-content carousel-cont-heading">
           <h1 class="heading1-white carousel-div-heading">
             Instantly Discover 10,000+ Verified Vendors Across 40+ Categories!
           </h1>
-          <button class="button carousel-div-button">Contact Us</button>
+          <button
+            onclick=" window.open('https://venwiz.com#contact','_blank')"
+            class="button carousel-div-button"
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </div>
-    <script src="/script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Poppins;
+  }
+
+  .header {
+    background-image: url("Header-Background.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px 100px 40px;
+  }
+
+  .navbar {
+    max-width: 1320px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .header-content-container {
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch !important;
+  }
+
+  .header-content {
+    max-width: 523px;
+    overflow: hidden;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .list {
+    margin-left: 20px;
+  }
+
+  .form-container {
+    max-width: 440px;
+    min-width: 340px;
+    overflow: hidden;
+    margin-left: 40px;
+    margin-bottom: -530px;
+    padding-top: 30px;
+  }
+
+  .form-back {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(231, 227, 248, 0.1);
+    backdrop-filter: blur(150px);
+    border-radius: 9px;
+    height: 480px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-left: 20px;
+  }
+
+  .form {
+    position: relative;
+    margin-right: 10px;
+    top: -510px;
+    padding: 50px 30px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 3px solid rgba(231, 227, 248, 0.25);
+    backdrop-filter: blur(150px);
+    border-radius: 9px;
+    max-width: 423px;
+    z-index: 1;
+  }
+
+  .inputcont {
+    padding-right: 20px;
+  }
+
+  .input {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+    padding: 20px 0 20px 20px;
+    border-radius: 9px;
+    margin-bottom: 11px;
+    color: white;
+  }
+
+  .input::placeholder {
+    color: white;
+  }
+
+  .button {
+    display: block;
+    background: #17b45a;
+    border: none;
+    padding: 14px 28px;
+    color: white;
+    border-radius: 11px;
+  }
+
+  .heading1-white {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 121%;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .white-parah {
+    font-weight: 400;
+    font-size: 19.6552px;
+    line-height: 29px;
+    color: #ffffff;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .Brands-container {
+    margin: 60px auto;
+    padding: 0 40px;
+    max-width: 1100px;
+  }
+
+  .grid5 {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 20px;
+  }
+
+  .heading-blue {
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    color: #012970;
+    margin-bottom: 20px;
+  }
+
+  .brand {
+    width: 100%;
+    height: 72px;
+    background: #efefef;
+    border-radius: 8.41654px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-img {
+    max-height: 80%;
+    max-width: 90%;
+    margin: 10px 10px;
+    mix-blend-mode: multiply;
+  }
+
+  .carousel-div {
+    background-image: url("Header-Background.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+  }
+
+  .carousel-container {
+    min-width: 440px;
+    width: 100%;
+    margin-right: 40px;
+    overflow: hidden;
+  }
+
+  #carousel {
+    display: flex;
+  }
+
+  .slide {
+    display: none;
+    background: #efefef;
+    border-radius: 38.9041px;
+    padding: 30px 20px;
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+  }
+
+  .slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: darkslategrey;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-heading {
+    font-size: 18px;
+  }
+
+  .testimonail-subheading {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    max-width: 70%;
+    font-weight: 500;
+    color: grey;
+  }
+
+  .testimonial-parah {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .nav-button {
+    margin: 0 20px;
+    border-radius: 100%;
+    padding: 10px 12px;
+    border: none;
+    font-weight: 600;
+  }
+
+  .nav-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .carousel-cont-heading {
+    margin-right: 0px;
+    margin-left: 40px;
+  }
+
+  /* normal styles */
+  .flexrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marginbottom20 {
+    margin-bottom: 20px;
+  }
+
+  .flexrowend {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  /* media queries */
+
+  @media only screen and (max-width: 991px) {
+    .heading1-white {
+      font-size: 40px;
+    }
+
+    .white-parah {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .header-content {
+      margin-right: 20px;
+    }
+
+    .form-container {
+      margin-left: 20px;
+    }
+
+    .header {
+      padding: 60px 20px;
+    }
+
+    .grid5 {
+      column-gap: 20px;
+    }
+
+    .carousel-container {
+      margin-right: 20px;
+    }
+
+    .carousel-cont-heading {
+      margin-right: 0px;
+      margin-left: 20px;
+    }
+
+    .carousel-div {
+      padding: 60px 20px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .header {
+      padding-bottom: 100px;
+    }
+
+    .header-content {
+      margin-right: 0px;
+      margin-bottom: 60px;
+    }
+
+    .form-container {
+      max-width: 523px;
+    }
+
+    .header-content-container {
+      flex-direction: column;
+    }
+
+    .carousel-div-heading {
+      text-align: center;
+    }
+
+    .carousel-div-button {
+      margin: 0 auto;
+    }
+
+    .grid5 {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+    }
+
+    .carousel-container {
+      margin-right: 0px;
+      margin-bottom: 40px;
+    }
+
+    .carousel-cont-heading {
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .heading1-white {
+      font-size: 34px;
+    }
+
+    .white-parah {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .carousel-container {
+      min-width: 200px;
+    }
+
+    .testimonial-heading {
+      font-size: 16px;
+    }
+
+    .testimonail-subheading {
+      font-size: 12px;
+    }
+
+    .testimonial-parah {
+      font-size: 12px;
+    }
+    .slide {
+      padding: 24px 18px;
+    }
+  }
+</style>
+
+<script>
+  const carousel = document.getElementById("carousel");
+
+  // Get the slides
+  const slides = carousel.children;
+
+  // Set the current slide
+  let currentSlide = 0;
+
+  // Show the first slide
+  slides[currentSlide].classList.add("active");
+
+  // Next button event listener
+  document.getElementById("next-button").addEventListener("click", () => {
+    // Remove the active class from the current slide
+    slides[currentSlide].classList.remove("active");
+
+    // Increment the current slide
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    // Add the active class to the new current slide
+    slides[currentSlide].classList.add("active");
+  });
+
+  // Prev button event listener
+  document.getElementById("prev-button").addEventListener("click", () => {
+    // Remove the active class from the current slide
+    slides[currentSlide].classList.remove("active");
+
+    // Decrement the current slide
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+
+    // Add the active class to the new current slide
+    slides[currentSlide].classList.add("active");
+  });
+</script>
